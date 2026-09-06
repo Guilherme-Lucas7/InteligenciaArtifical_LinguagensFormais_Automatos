@@ -83,11 +83,19 @@ $$
 Responda:
 
 1. Quantos símbolos existem no alfabeto?
-2. Quais são os símbolos?
-3. O símbolo `a` pertence ao alfabeto?
-4. O símbolo `d` pertence ao alfabeto?
-5. Escreva uma palavra formada por símbolos desse alfabeto.
+Existem 3 símbolos.
 
+2. Quais são os símbolos?
+Os símbolos são a, b e c.
+
+3. O símbolo `a` pertence ao alfabeto?
+Sim, o símbolo a pertence ao alfabeto.
+
+4. O símbolo `d` pertence ao alfabeto?
+Não, o símbolo d não pertence ao alfabeto.
+
+5. Escreva uma palavra formada por símbolos desse alfabeto.
+Uma palavra possível é bac.
 ---
 
 # 2. Palavras sobre um alfabeto
@@ -207,11 +215,11 @@ Classifique cada sequência como **palavra válida** ou **não válida**:
 
 | Sequência | Válida? | Justificativa |
 | --------- | ------- | ------------- |
-| `0101`    |         |               |
-| `00110`   |         |               |
-| `012`     |         |               |
-| `111`     |         |               |
-| `10a`     |         |               |
+| `0101`    |  sim    |   Porque possui 0 e 1|
+| `00110`   |  sim    |   Porque todos os números pertence ao alfabeto|
+| `012`     |  não    |   Porque contém o símbolo 2, que não pertence ao alfabeto|
+| `111`     |  sim    |   Porque possui apenas o símbolo 1, que pertence ao alfabeto|
+| `10a`     |  não    |   Porque contém a não pertence ao alfabeto.|
 
 ---
 
@@ -332,11 +340,22 @@ $$
 Determine se as afirmações são **verdadeiras ou falsas**:
 
 1. $0 \in \Sigma$
+Verdadeiro, pois o símbolo 0 pertence ao alfabeto
+
 2. $1 \in \Sigma$
+Verdadeiro, pois o símbolo 1 pertence ao alfabeto
+
 3. $01 \in \Sigma$
+Falso, pois 01 é uma palavra formada por dois símbolos, e não um símbolo individual de Σ
+
 4. $01 \in \Sigma^*$
+Verdadeiro, pois 01 é uma palavra formada somente pelos símbolos 0 e 1
+
 5. $2 \in \Sigma$
+Falso, pois o símbolo 2 não pertence ao alfabeto
+
 6. $101 \in \Sigma^*$
+Verdadeiro, pois 101 é uma palavra formada somente pelos símbolos 0 e 1
 
 Justifique cada resposta.
 
