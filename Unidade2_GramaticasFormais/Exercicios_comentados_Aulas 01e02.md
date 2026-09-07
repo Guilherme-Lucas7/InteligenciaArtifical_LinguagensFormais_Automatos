@@ -462,11 +462,22 @@ $$
 Determine se cada palavra pertence à linguagem:
 
 1. $0 \in L$
+Verdadeiro, pois 0 pertence a L
+
 2. $01 \in L$
+Verdadeiro, pois 01 pertence a L
+
 3. $0111 \in L$
+Verdadeiro, pois 0111 pertence a L
+
 4. $10 \in L$
+Falso, pois 10 não pertence a L
+
 5. $111 \in L$
+Falso, pois 111 não pertence a L
+
 6. $011 \in L$
+Verdadeiro, pois 011 pertence a L
 
 ---
 
@@ -570,10 +581,16 @@ L = {b^n \mid n \geq 1}
 $$
 
 1. Escreva as cinco primeiras palavras.
-2. Explique o significado de $b^n$.
-3. A palavra `bbbbbb` pertence à linguagem?
-4. A palavra vazia ($\varepsilon$) pertence à linguagem?
+As cinco primeiras palavras são: `b`, `bb`, `bbb`, `bbbb` e `bbbbb`
 
+2. Explique o significado de $b^n$.
+`bⁿ` representa a letra `b` repetida `n` vezes
+
+3. A palavra `bbbbbb` pertence à linguagem?
+Sim, `bbbbbb` pertence à linguagem, pois corresponde a `b⁶`
+
+4. A palavra vazia ($\varepsilon$) pertence à linguagem?
+Não, a palavra vazia `ε` não pertence à linguagem, porque ela possui zero símbolos e a condição exige `n ≥ 1`
 ---
 
 # 6. Linguagem vazia e palavra vazia
@@ -674,12 +691,19 @@ $$
 L={\varepsilon}
 $$
 
+A diferença é que `∅` representa uma linguagem que não possui nenhuma palavra, enquanto `{ε}` representa uma linguagem que possui uma palavra: a palavra vazia. Embora `ε` tenha comprimento zero, ela continua sendo uma palavra
+
+
 Depois responda:
 
 1. Qual delas possui uma palavra?
-2. Qual delas não possui nenhuma palavra?
-3. Qual é o comprimento da palavra $\varepsilon$?
+A linguagem `{ε}` possui uma palavra: a palavra vazia
 
+2. Qual delas não possui nenhuma palavra?
+A linguagem `∅` não possui nenhuma palavra
+
+3. Qual é o comprimento da palavra $\varepsilon$?
+O comprimento da palavra `ε` é 0, pois ela não possui símbolos
 ---
 
 # 7. Estrutura de uma gramática
@@ -785,11 +809,19 @@ $$
 Identifique:
 
 1. O conjunto de variáveis.
-2. O conjunto de terminais.
-3. O conjunto de produções.
-4. O símbolo inicial.
-5. Qual palavra pode ser gerada por essa gramática?
+O conjunto de variáveis é `{S, A}`
 
+2. O conjunto de terminais.
+O conjunto de terminais é `{0, 1}`
+
+3. O conjunto de produções.
+O conjunto de produções é `{S → 0A, A → 1}`
+
+4. O símbolo inicial.
+O símbolo inicial é `S`
+
+5. Qual palavra pode ser gerada por essa gramática?
+A palavra gerada é `01`, conforme a derivação: `S ⇒ 0A ⇒ 01`
 ---
 
 # 8. Como ler e aplicar uma produção
@@ -885,10 +917,16 @@ $$
 Começando com $S$:
 
 1. Aplique a regra uma vez.
-2. Aplique a regra duas vezes.
-3. Aplique a regra três vezes.
-4. Escreva a sequência completa de derivação.
+Aplicando a regra uma vez: `S ⇒ 0S`
 
+2. Aplique a regra duas vezes.
+Aplicando a regra duas vezes: `S ⇒ 0S ⇒ 00S`
+
+3. Aplique a regra três vezes.
+Aplicando a regra três vezes: `S ⇒ 0S ⇒ 00S ⇒ 000S`
+
+4. Escreva a sequência completa de derivação.
+A sequência completa de derivação é: `S ⇒ 0S ⇒ 00S ⇒ 000S`
 ---
 
 # 9. Derivação completa de uma palavra
@@ -1030,7 +1068,9 @@ aaab
 $$
 
 **Escreva todos os passos da derivação.**
+`S ⇒ aS ⇒ aaS ⇒ aaaS ⇒ aaab`
 
+A regra `S → aS` foi aplicada três vezes para gerar as três letras `a`. Depois, a regra `S → b` foi aplicada para substituir a variável `S` por `b` e finalizar a palavra
 ---
 
 # 10. Identificando palavras geradas por uma gramática
@@ -1189,7 +1229,25 @@ Determine se cada palavra pode ser gerada:
 6. `1001`
 
 Para as palavras que podem ser geradas, apresente a derivação completa.
+1. A palavra `1` pode ser gerada:
 
+   `S ⇒ 1`
+
+2. A palavra `01` pode ser gerada:
+
+   `S ⇒ 0S ⇒ 01`
+
+3. A palavra `001` pode ser gerada:
+
+   `S ⇒ 0S ⇒ 00S ⇒ 001`
+
+4. A palavra `0001` pode ser gerada:
+
+   `S ⇒ 0S ⇒ 00S ⇒ 000S ⇒ 0001`
+
+5. A palavra `101` não pode ser gerada, porque a regra `S → 1` encerra a derivação. Depois de produzir `1`, não é possível acrescentar outros símbolos.
+
+6. A palavra `1001` não pode ser gerada pelo mesmo motivo: o `1` somente pode aparecer no final da palavra.
 ---
 
 # Gabarito Comentado
@@ -1736,29 +1794,29 @@ Responda sem consultar o gabarito:
 ### 1.
 
 A palavra `b` pode ser gerada?
-
+sim
 ### 2.
 
 A palavra `ab` pode ser gerada?
-
+sim
 ### 3.
 
 A palavra `aab` pode ser gerada?
-
+sim
 ### 4.
 
 A palavra `aaab` pode ser gerada?
-
+sim
 ### 5.
 
 A palavra `aba` pode ser gerada?
-
+não
 ### 6.
 
 Escreva a derivação completa de `aaaab`.
-
+`S ⇒ aS ⇒ aaS ⇒ aaaS ⇒ aaaaS ⇒ aaaab`
 ### 7.
 
 Descreva, com suas palavras, o padrão das palavras geradas por essa gramática.
-
+A gramática gera palavras formadas por zero ou mais letras `a`, seguidas de uma única letra `b`. A letra `b` sempre aparece no final da palavra
 > **Dica:** observe o que acontece quando aplicamos várias vezes $S\rightarrow aS$ e, finalmente, utilizamos $S\rightarrow b$.
