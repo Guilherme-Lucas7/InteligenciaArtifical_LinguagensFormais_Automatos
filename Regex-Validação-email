@@ -1,0 +1,74 @@
+import re 
+
+padrao_email = r"^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A=Za-z]{2,}$"
+
+def descobrir_motivo(email):
+    if " " in email:
+        return "contém espaço"
+    
+    if "@" not in email:
+        return "não possui @"
+    
+    if email.count("@") > 1:
+        return "possui mais de um @"
+    
+    usuario, dominio = email.split("@")
+    
+    if usuario == "":
+        return "não possui usuário"
+    
+    if dominio =="":
+        return "não possui domínio"
+    
+    if "." not in dominio:
+        return "não possui extensão"
+    
+    
+    extensao = dominio.rsplit(".",1)[1]
+    
+    if len(extensao) < 2:
+        return "a extensao possui menos de duas letras"
+    
+    return "não atende ao formato permitido"
+
+emails_validos = []
+emails_invalidos = []
+
+for i in range(5):
+    email = input(f'Digite o {i + 1}º e-mail:')
+    
+    if re.fullmatch (padrao_email, email):
+        emails_validos.append(email)
+    else: 
+        motivo = descobrir_motivo(email)
+        emails_invalidos.append((email, motivo))
+        
+        
+print('\nE-mails validos:')
+
+for email in emails_validos:
+    print(email)
+        
+print('\nE-mails invalidos')
+
+for email,motivo in emails_invalidos:
+    print(f'{email} - Motivo: {motivo}')
+
+
+--------------------------------------------
+
+Digite o 1º e-mail:maria@gmail.com
+Digite o 2º e-mail:joao.silva@udf.edu.br
+Digite o 3º e-mail:estudante_01@faculdade.com
+Digite o 4º e-mail:pedro.gmail.com
+Digite o 5º e-mail:ana@dominio    
+
+E-mails validos:
+maria@gmail.com
+joao.silva@udf.edu.br
+estudante_01@faculdade.com
+
+E-mails invalidos
+pedro.gmail.com - Motivo: não possui @
+ana@dominio - Motivo: não possui extensão
+
